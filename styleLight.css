@@ -1,8 +1,8 @@
 body {
-  background-color: #002b36; }
+  background-color: #fdf6e3; }
 
 p {
-  color: #eee8d5;
+  color: #073642;
   font-family: "Computer Modern Serif";
   font-size: 19px; }
 
@@ -48,4 +48,4 @@ code {
   background-color: #002b36;
   color: #eee8d5; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styleLight.css.map */
