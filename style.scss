@@ -1,0 +1,64 @@
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+$concrete : 'Computer Modern Concrete';
+$serif : 'Computer Modern Serif';
+$tw : 'Computer Modern Typewriter';
+$twl : 'Computer Modern Typewriter Light';
+
+body {
+    background-color: $base03;
+}
+
+p {
+    color: $base2;
+    font-family: $serif;
+    font-size: 19px;
+}
+
+h1 {
+    color: $orange;
+    font-family: $tw;
+}
+
+h2 {
+    color: $green;
+    font-family: $tw;
+}
+
+h3 {
+    color: $violet;
+    font-family: $tw;
+}
+
+code {
+    color: $magenta;
+}
+
+.button {
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+    width: 80px;
+    text-align: center;
+    
+}
+
+#btnAbout {
+    background-color: $orange;
+    color: $blue;
+}

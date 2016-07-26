@@ -1,0 +1,35 @@
+body {
+  background-color: #002b36; }
+
+p {
+  color: #eee8d5;
+  font-family: "Computer Modern Serif";
+  font-size: 19px; }
+
+h1 {
+  color: #cb4b16;
+  font-family: "Computer Modern Typewriter"; }
+
+h2 {
+  color: #859900;
+  font-family: "Computer Modern Typewriter"; }
+
+h3 {
+  color: #6c71c4;
+  font-family: "Computer Modern Typewriter"; }
+
+code {
+  color: #d33682; }
+
+.button {
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  width: 80px;
+  text-align: center; }
+
+#btnAbout {
+  background-color: #cb4b16;
+  color: #268bd2; }
+
+/*# sourceMappingURL=style.css.map */
