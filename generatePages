@@ -1,12 +1,12 @@
 #!/bin/bash
 
 rm *Light.html
-rm *Light.scss
-rm *Light.css
+rm style/*Light.scss
+rm style/*Light.css
 
 # stylesheets
 echo "copying scss files..."
-for scss in *.scss
+for scss in style/*.scss
 do
     if [ $scss != *"colors.scss"* ];
     then
@@ -37,7 +37,7 @@ do
         LIGHT="${html%.html}Light.html"
         cp -v $html $LIGHT
     sed -i 's/style.css/styleLight.css/g' $LIGHT
-    sed -i 's/indexLight.html/index.html/g' $LIGHT
+    sed -i 's/Light.html/.html/g' $LIGHT
     sed -i 's/btnLight/btnDark/g' $LIGHT
     fi
 done
