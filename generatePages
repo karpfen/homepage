@@ -1,18 +1,19 @@
 #!/bin/bash
 
-rm *Light.html
-rm style/*Light.scss
-rm style/*Light.css
+mkdir output
+mkdir output/style
+mkdir output/html
+
+cp -r fonts output
 
 # stylesheets
+
+cp style/fonts.css output/style
 echo "copying scss files..."
 for scss in style/*.scss
 do
-    if [ $scss != *"colors.scss"* ];
-    then
-    CSS="${scss%.scss}.css"
+    CSS=output/"${scss%.scss}.css"
     sass $scss $CSS
-    fi
 
     if [ $scss != *"colors.scss"* ] && [ $scss != *"Light.scss"* ];
     then
@@ -24,20 +25,24 @@ do
 
     # generate css
     echo "generating light stylesheets"
-    LIGHTCSS="${LIGHT%.scss}.css"
+    LIGHTCSS=output/"${LIGHT%.scss}.css"
     sass $LIGHT $LIGHTCSS
+    rm $LIGHT
     fi
 done
 
 # html pages
-for html in *.html
+for html in html/*.html
 do
+    cp $html output/$html
     if [ $html != *"Light.html"* ];
     then
-        LIGHT="${html%.html}Light.html"
+        LIGHT=output/"${html%.html}Light.html"
         cp -v $html $LIGHT
     sed -i 's/style.css/styleLight.css/g' $LIGHT
     sed -i 's/Light.html/.html/g' $LIGHT
     sed -i 's/btnLight/btnDark/g' $LIGHT
     fi
 done
+
+rm output/style/*.css.map
