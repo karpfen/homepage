@@ -5,6 +5,7 @@ mkdir output/style
 mkdir output/html
 
 cp -r fonts output
+cp -r res output
 
 # stylesheets
 
@@ -17,17 +18,17 @@ do
 
     if [ $scss != *"colors.scss"* ] && [ $scss != *"Light.scss"* ];
     then
-    LIGHT="${scss%.scss}Light.scss"
-    cp -v $scss $LIGHT
+        LIGHT="${scss%.scss}Light.scss"
+        cp -v $scss $LIGHT
 
-    sed -i 's/base03/base3/g' $LIGHT
-    sed -i 's/base2/base02/g' $LIGHT
+        sed -i 's/base03/base3/g' $LIGHT
+        sed -i 's/base2/base02/g' $LIGHT
 
-    # generate css
-    echo "generating light stylesheets"
-    LIGHTCSS=output/"${LIGHT%.scss}.css"
-    sass $LIGHT $LIGHTCSS
-    rm $LIGHT
+        # generate css
+        echo "generating light stylesheets"
+        LIGHTCSS=output/"${LIGHT%.scss}.css"
+        sass $LIGHT $LIGHTCSS
+        rm $LIGHT
     fi
 done
 
@@ -39,9 +40,17 @@ do
     then
         LIGHT=output/"${html%.html}Light.html"
         cp -v $html $LIGHT
-    sed -i 's/style.css/styleLight.css/g' $LIGHT
-    sed -i 's/Light.html/.html/g' $LIGHT
-    sed -i 's/btnLight/btnDark/g' $LIGHT
+        sed -i 's/Light.html/tmpIL/g' $LIGHT
+
+        sed -i 's/index.html/indexLight.html/g' $LIGHT
+        sed -i 's/studies.html/studiesLight.html/g' $LIGHT
+        sed -i 's/work.html/workLight.html/g' $LIGHT
+        sed -i 's/about.html/aboutLight.html/g' $LIGHT
+        sed -i 's/contact.html/contactLight.html/g' $LIGHT
+        sed -i 's/style.css/styleLight.css/g' $LIGHT
+
+        sed -i 's/tmpIL/.html/g' $LIGHT
+        sed -i 's/btnLight/btnDark/g' $LIGHT
     fi
 done
 

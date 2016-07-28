@@ -35,23 +35,49 @@ code {
 }
 
 .button {
+    font-family: $tw;
+    font-size: 24px;
     display: inline-block;
-    height: 80px;
-    line-height: 80px;
-    width: 80px;
+    height: 70px;
+    line-height: 70px;
+    width: 120px;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#btnIndex {
+    margin-left: 0;
+    background-color: $cyan;
+    color: $black;
+}
+
+#btnStudy {
+    background-color: $magenta;
+    color: $black;
+}
+
+#btnWork {
+    background-color: $yellow;
+    color: $black;
 }
 
 #btnAbout {
-    background-color: $orange;
-    color: $blue;
+    background-color: $red;
+    color: $black;
+}
+
+#btnContact {
+    background-color: $green;
+    color: $black;
 }
 
 #btnLight {
     position: absolute;
     right: 10px;
     bottom: 10px;
-    line-height: 8px;
+    margin: 5px;
     background-color: $btnBgLight;
     color: $btnFgLight;
 }
@@ -60,7 +86,19 @@ code {
     position: absolute;
     right: 10px;
     bottom: 10px;
-    line-height: 8px;
+    margin: 5px;
     background-color: $btnBgDark;
     color: $btnFgDark;
+}
+
+#crudeEarth {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 200px;
+    width: 200px;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
 }
