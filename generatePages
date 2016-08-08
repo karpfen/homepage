@@ -2,9 +2,13 @@
 
 mkdir output
 mkdir output/style
+mkdir output/fonts
 mkdir output/html
+mkdir output/fonts/Serif
+mkdir output/fonts/Typewriter
 
-cp -r fonts output
+cp fonts/Serif/cmunrm.woff output/fonts/Serif/
+cp fonts/Typewriter/cmuntt.woff output/fonts/Typewriter/
 cp -r res output
 
 # stylesheets
@@ -35,11 +39,20 @@ done
 # html pages
 for html in html/*.html
 do
-    cp $html output/$html
+    htmlDark="${html/html/output}"
+    cp $html $htmlDark
+
     if [ $html != *"Light.html"* ];
     then
-        LIGHT=output/"${html%.html}Light.html"
-        cp -v $html $LIGHT
+        LIGHT="${htmlDark%.html}Light.html"
+        cp -v $htmlDark $LIGHT
+
+        # fill templates
+        sed -e '/##headDefault##/ {' -e 'r html/templates/headDefault' -e 'd' -e '}' -i $LIGHT
+        sed -e '/##headDefault##/ {' -e 'r html/templates/headDefault' -e 'd' -e '}' -i $htmlDark
+        sed -e '/##menuButtons##/ {' -e 'r html/templates/menuButtons' -e 'd' -e '}' -i $LIGHT
+        sed -e '/##menuButtons##/ {' -e 'r html/templates/menuButtons' -e 'd' -e '}' -i $htmlDark
+
         sed -i 's/Light.html/tmpIL/g' $LIGHT
 
         sed -i 's/index.html/indexLight.html/g' $LIGHT

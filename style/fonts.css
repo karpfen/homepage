@@ -1,11 +1,4 @@
 @font-face {
-    font-family: 'Computer Modern Concrete';
-    src:    url('../fonts/Concrete/cmunorm.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Computer Modern Serif';
     src: url('../fonts/Serif/cmunrm.woff') format('woff');
     font-weight: normal;
@@ -15,13 +8,6 @@
 @font-face {
     font-family: 'Computer Modern Typewriter';
     src: url('../fonts/Typewriter/cmuntt.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Computer Modern Typewriter Light';
-    src: url('../fonts/TypewriterLight/cmunbtl.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

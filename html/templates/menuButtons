@@ -1,0 +1,6 @@
+<a id="btnIndex" class="button" href="./index.html">home</a>
+<a id="btnStudy" class="button" href="./studies.html">studies</a>
+<a id="btnWork" class="button" href="./work.html">work</a>
+<a id="btnAbout" class="button" href="./about.html">about me</a>
+<a id="btnContact" class="button" href="./contact.html">contact</a>
+<img id="crudeEarth" src="../res/crudeEarth512.png">
