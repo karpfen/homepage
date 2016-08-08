@@ -64,6 +64,7 @@ do
 
         sed -i 's/tmpIL/.html/g' $LIGHT
         sed -i 's/btnLight/btnDark/g' $LIGHT
+        sed -i 's/lineDark/lineLight/g' $LIGHT
     fi
 done
 
