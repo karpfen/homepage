@@ -66,6 +66,15 @@ do
         sed -i 's/btnLight/btnDark/g' $LIGHT
         sed -i 's/lineDark/lineLight/g' $LIGHT
     fi
+
+    # fill content
+    for content in html/content/*.html
+    do
+        contenttag="${content/html\/content\//##}"
+        contenttag="${contenttag/.html/##}"
+        sed -e "/$contenttag/ {" -e "r $content" -e "d" -e "}" -i $LIGHT
+        sed -e "/$contenttag/ {" -e "r $content" -e "d" -e "}" -i $htmlDark
+    done
 done
 
 rm output/style/*.css.map
